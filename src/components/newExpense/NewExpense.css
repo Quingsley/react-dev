@@ -1,0 +1,7 @@
+.new-expense {
+  width: 50%;
+  background-color: #ffe066;
+  padding: 6rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  text-align: start;
+}

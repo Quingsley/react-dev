@@ -1,0 +1,12 @@
+.expense-item__date {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffd43b;
+  padding: 1rem;
+  margin-left: 0.5rem;
+  /* border-radius: 3px; */
+  color: #212529;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-start;
+}
