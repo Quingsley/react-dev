@@ -1,21 +1,19 @@
+import { Expense } from "../../utils/utils";
 import "./ExpenseForm.css";
 import { ChangeEvent, useState } from "react";
 
-interface Expense {
-  title?: string;
-  amount?: number | string;
-  date?: Date;
-  id?: string;
-}
-
 const ExpenseForm = (props: {
-  onSaveExpenseData: (data: Expense) => Expense;
+  onSaveExpenseData: (data: Expense) => void;
+  onCancelExpense: (flag: boolean) => void;
+  flag: boolean;
 }) => {
   const [newExpense, setNewExpense] = useState<Expense>({
     title: "",
     amount: "",
     date: new Date(),
   });
+
+  const [, setNewFlag] = useState(props.flag);
 
   const titleChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     setNewExpense((prevState) => {
@@ -46,6 +44,16 @@ const ExpenseForm = (props: {
       title: "",
       amount: "",
       date: new Date(),
+    });
+  };
+
+  const newExpenseCancelHandler = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    event.preventDefault();
+    setNewFlag((prevFlag) => {
+      props.onCancelExpense(!prevFlag);
+      return !prevFlag;
     });
   };
   return (
@@ -87,8 +95,14 @@ const ExpenseForm = (props: {
             onChange={dateChangeHandler}
           />
         </div>
-        <div className="new-expense__control">
+        <div className="new-expense__control new-expense__control--btns">
           <button className="new-expense__button">Add Expense</button>
+          <button
+            className="new-expense__button"
+            onClick={newExpenseCancelHandler}
+          >
+            CANCEL
+          </button>
         </div>
       </div>
     </form>

@@ -58,3 +58,10 @@
   background-color: #fab005;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
+
+.new-expense__control--btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}

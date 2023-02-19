@@ -1,0 +1,22 @@
+.add-new-expense__button {
+  border: none;
+  font-weight: 700;
+  font-size: 3.6rem;
+  background: none;
+  background-color: #f08c00;
+  color: #212529;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  border-radius: 12px;
+  text-transform: uppercase;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.add-new-expense__button:hover {
+  background-color: #fab005;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.add-new-expense__button:active {
+  background-color: #fab005;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
